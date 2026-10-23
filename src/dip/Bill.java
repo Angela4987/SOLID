@@ -17,9 +17,7 @@ public class Bill {
 
     public void totalCalc() {
         billDeduction = d.calcDeduction(billAmount, deductionPercentage);
-
         float VATAmount = v.calcVAT(billAmount);
-
         billTotal = (billAmount - billDeduction) + VATAmount;
     }
 }
