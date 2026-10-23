@@ -12,16 +12,13 @@ public class Bill {
     public float billTotal;
     public int deductionPercentage;
 
-    private DeductionCalculator deductionCalculator;
-    private VATCalculator vatCalculator;
+    private DeductionCalculator d;
+    private VATCalculator v;
 
     public void totalCalc() {
-        billDeduction = deductionCalculator.calcDeduction(
-                billAmount,
-                deductionPercentage
-        );
+        billDeduction = d.calcDeduction(billAmount, deductionPercentage);
 
-        float VATAmount = vatCalculator.calcVAT(billAmount);
+        float VATAmount = v.calcVAT(billAmount);
 
         billTotal = (billAmount - billDeduction) + VATAmount;
     }
